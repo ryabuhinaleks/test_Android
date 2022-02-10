@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1081628737396",
+    "firebase_url": "https://dbtesttask-default-rtdb.firebaseio.com",
+    "project_id": "dbtesttask",
+    "storage_bucket": "dbtesttask.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081628737396:android:27503d55565e1f81d43621",
+        "android_client_info": {
+          "package_name": "com.example.testtask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081628737396-1ilu65bqjeeguqg7v7pohc56pq80vimp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrs3MKsbikQP4Co4_F5V3_LmWxntZ9p6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081628737396-1ilu65bqjeeguqg7v7pohc56pq80vimp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

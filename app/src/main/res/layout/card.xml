@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/viewcard"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/RootLinearLayoutStyle">
+
+    <androidx.cardview.widget.CardView
+        style="@style/CardViewStyle"
+        android:layout_height="200dp"
+        app:cardCornerRadius="16dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/RootConstraintLayoutStyle">
+
+            <ImageView
+                android:id="@+id/image"
+                style="@style/ImageStyle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/test"/>
+
+            <TextView
+                android:id="@+id/price"
+                style="@style/TextViewCardStyle"
+                android:text="1200000"
+                app:layout_constraintTop_toTopOf="@id/image"
+                app:layout_constraintRight_toRightOf="@id/image"
+                android:drawableRight="@drawable/ic_money"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/place"
+        style="@style/TextViewCardV2Style"
+        android:text="Тюмень,ул. Пожрных и спасателей, д 5"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/area"
+        style="@style/TextViewCardV2Style"
+        android:text="Описание описание описание описание"
+        android:textSize="12sp"
+        android:paddingBottom="10dp"/>
+</LinearLayout>
+

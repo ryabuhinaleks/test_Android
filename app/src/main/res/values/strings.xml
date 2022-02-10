@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Тестовое задание</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="click">Авторизоваться</string>
+    <string name="userIsNotRegistered">Пользователь не зарегистрирован</string>
+    <string name="done">Сохранить/Обновить</string>
+    <string name="back">Назад</string>
+    <string name="update">Обновить</string>
+    <string name="edit">Редактировать</string>
+    <string name="price">Цена</string>
+    <string name="place">Адрес</string>
+    <string name="area">Площадь</string>
+    <string name="newCard">Новый объект</string>
+    <string name="newCardSuccess">Успешно</string>
+    <string name="example_text">Пример заголовка</string>
+    <string name="listCards">Список объектов</string>
+    <string name="emptyField">Заполните поле</string>
+    <string name="countRooms">Количество комнат</string>
+    <string name="priceM">Цена за кв. м</string>
+    <string name="floor">Этаж</string>
+    <string name="image">Картинка</string>
+    <string name="addImage">Добавить изображение</string>
+</resources>

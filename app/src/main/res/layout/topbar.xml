@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/RootTopBarStyle">
+
+    <FrameLayout
+        android:id="@+id/backOrExit"
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/back"
+            style="@style/IconTopBarStyle"
+            android:src="@drawable/ic_back"
+            android:contentDescription="@string/back" />
+
+        <ImageButton
+            android:id="@+id/exit"
+            style="@style/IconTopBarStyle"
+            android:src="@drawable/ic_exit"
+            android:contentDescription="@string/back" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/HeaderTopBarStyle"
+        android:text="@string/example_text"
+        app:layout_constraintStart_toEndOf="@id/backOrExit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <FrameLayout
+        android:id="@+id/doneOrAdd"
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/done"
+            style="@style/IconTopBarStyle"
+            android:src="@drawable/ic_done"
+            android:contentDescription="@string/done"/>
+
+        <ImageButton
+            android:id="@+id/add"
+            style="@style/IconTopBarStyle"
+            android:src="@drawable/ic_add"
+            android:contentDescription="@string/done"/>
+
+        <ImageButton
+            android:id="@+id/edit"
+            style="@style/IconTopBarStyle"
+            android:src="@drawable/ic_edit"
+            android:contentDescription="@string/edit"/>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
