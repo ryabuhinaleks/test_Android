@@ -18,7 +18,7 @@ class AddCardPresenter : MvpPresenter<AddCardView>() {
 
     fun createCard (binding: FragmentUpdateCardBinding) :Boolean {
         with(binding) {
-            if (checkFields(price, area, place)) {
+            if (APP_ACTIVITY.showEmptyField(price, area, place)) {
                 val idNewCard = dataBase.add(getDataCard(binding))
 
                 if (imageURI != null) {
@@ -42,17 +42,6 @@ class AddCardPresenter : MvpPresenter<AddCardView>() {
                 floor = floor.text.toString().toIntOrNull()
             )
         }
-    }
-
-    private fun checkFields (vararg field: EditText) : Boolean {
-        var result = true;
-        field.map {
-            if (it.text.toString().isEmpty()) {
-                it.error = APP_ACTIVITY.getString(R.string.emptyField)
-                result = false
-            }
-        }
-        return result
     }
 
     fun setNewImage(data: Uri?) {
