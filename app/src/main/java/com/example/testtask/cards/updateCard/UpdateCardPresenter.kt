@@ -14,9 +14,13 @@ class UpdateCardPresenter : MvpPresenter<UpdateCardView>() {
 
     fun updateCard(card: Card) {
         dataBase.update(card)
-        if (imageURI != null && card.id != null) {
-            dataBase.uploadImage(imageURI, card.id!!)
+
+        imageURI?.let { uri ->
+            card.id?.let { id ->
+                dataBase.uploadImage(uri, id)
+            }
         }
+
     }
 
     fun updateImage() = imageURI.toString()

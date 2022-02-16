@@ -33,7 +33,7 @@ class AuthFragment : MvpAppCompatFragment(), AuthView {
     override fun onSignIn(result: Boolean) {
         when(result) {
             true ->  APP_ACTIVITY.launchFragment(ListCardsFragment())
-            false -> APP_ACTIVITY.notification(getString(R.string.userIsNotRegistered))
+            false -> APP_ACTIVITY.notification(getString(R.string.user_is_not_registered))
         }
     }
 }

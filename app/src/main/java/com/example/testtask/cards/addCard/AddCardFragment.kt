@@ -31,15 +31,13 @@ class AddCardFragment : MvpAppCompatFragment(), AddCardView {
         }
 
         with(binding.topbarList) {
-            title.text = getString(R.string.newCard)
-            back.visibility = View.VISIBLE
-            done.visibility = View.VISIBLE
+            title.text = getString(R.string.new_card)
 
-            back.setOnClickListener {
+            buttonStart.setOnClickListener {
                 APP_ACTIVITY.back()
             }
 
-            done.setOnClickListener {
+            buttonEnd.setOnClickListener {
                 if (presenter.createCard(binding)) {
                     APP_ACTIVITY.back()
                 }

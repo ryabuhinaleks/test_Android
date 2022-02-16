@@ -23,7 +23,10 @@ class UpdateCardFragment : MvpAppCompatFragment(), UpdateCardView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        card = arguments?.getParcelable(ARG_OPTIONS)!!
+
+        arguments?.run {
+            card = getParcelable(ARG_OPTIONS)!!
+        }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -36,14 +39,12 @@ class UpdateCardFragment : MvpAppCompatFragment(), UpdateCardView {
         }
 
         with(binding.topbarList) {
+
             title.text = "#${card.id}"
 
-            back.visibility = View.VISIBLE
-            done.visibility = View.VISIBLE
+            buttonStart.setOnClickListener { APP_ACTIVITY.back() }
 
-            back.setOnClickListener { APP_ACTIVITY.back() }
-
-            done.setOnClickListener {
+            buttonEnd.setOnClickListener {
                 updateDataCard()
                 presenter.updateCard(card)
                 card.image = presenter.updateImage()
@@ -97,7 +98,9 @@ class UpdateCardFragment : MvpAppCompatFragment(), UpdateCardView {
     }
 
     override fun setImage(data: Uri?) {
-        APP_ACTIVITY.loadImage(data!!.toString(),binding.image)
+        data?.let { uri ->
+            APP_ACTIVITY.loadImage(uri.toString(), binding.image)
+        }
     }
 
     companion object {

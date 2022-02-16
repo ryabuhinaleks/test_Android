@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/RootConstraintLayoutStyle">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <include
         android:id="@+id/topbar_list"
@@ -27,7 +28,10 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
-            style="@style/LinearLayoutStyle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/default_padding"
             app:layout_constraintTop_toBottomOf="@id/topbar_list"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
@@ -35,13 +39,16 @@
             <EditText
                 android:id="@+id/price"
                 style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="@string/price"
                 android:imeOptions="actionNext"
                 android:inputType="number" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/uploadFile"
-                style="@style/CardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:cardCornerRadius="8dp">
 
@@ -61,18 +68,23 @@
 
                     <TextView
                         style="@style/TextViewStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="16dp"
                         android:layout_toEndOf="@id/btnImage"
-                        android:text="@string/addImage"
+                        android:text="@string/add_image"
                         android:textStyle="italic|bold"
                         app:layout_constraintTop_toTopOf="parent" />
                 </RelativeLayout>
+
             </androidx.cardview.widget.CardView>
 
             <EditText
                 android:id="@+id/place"
                 style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="@string/place"
                 android:imeOptions="actionNext"/>
@@ -80,6 +92,8 @@
             <EditText
                 android:id="@+id/area"
                 style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="@string/area"
                 android:imeOptions="actionNext"
@@ -88,16 +102,20 @@
             <EditText
                 android:id="@+id/count"
                 style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:hint="@string/countRooms"
+                android:hint="@string/count_rooms"
                 android:imeOptions="actionNext"
                 android:inputType="number" />
 
             <EditText
                 android:id="@+id/price2"
                 style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:hint="@string/priceM"
+                android:hint="@string/price_m"
                 android:textSize="16sp"
                 android:imeOptions="actionNext"
                 android:inputType="number" />
@@ -105,10 +123,15 @@
             <EditText
                 android:id="@+id/floor"
                 style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="@string/floor"
                 android:imeOptions="actionDone"
                 android:inputType="number" />
+
         </LinearLayout>
+
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,7 +25,10 @@ class DetailCardFragment : MvpAppCompatFragment(), DetailCardView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        idCard = arguments?.getString(ARG_OPTIONS)!!
+
+        arguments?.run {
+            idCard = getString(ARG_OPTIONS)!!
+        }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -37,11 +40,10 @@ class DetailCardFragment : MvpAppCompatFragment(), DetailCardView {
         with(binding.topbarList) {
             title.text = "#${idCard}"
 
-            back.visibility = View.VISIBLE
-            edit.visibility = View.VISIBLE
+            buttonStart.setOnClickListener { APP_ACTIVITY.back() }
 
-            back.setOnClickListener { APP_ACTIVITY.back() }
-            edit.setOnClickListener {
+            buttonEnd.setImageResource(R.drawable.ic_edit)
+            buttonEnd.setOnClickListener {
                APP_ACTIVITY.launchFragment(UpdateCardFragment.newInstance(card))
             }
         }
@@ -55,8 +57,8 @@ class DetailCardFragment : MvpAppCompatFragment(), DetailCardView {
             place.text = "${APP_ACTIVITY.getText(R.string.place)}: ${card.place}"
             area.text = "${APP_ACTIVITY.getText(R.string.area)}: ${card.area}"
 
-            showPropertyWithNullOnDisplay(count, card.count, R.string.countRooms)
-            showPropertyWithNullOnDisplay(price2, card.price2, R.string.priceM)
+            showPropertyWithNullOnDisplay(count, card.count, R.string.count_rooms)
+            showPropertyWithNullOnDisplay(price2, card.price2, R.string.price_m)
             showPropertyWithNullOnDisplay(floor, card.floor, R.string.floor)
 
             showImage()

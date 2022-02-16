@@ -2,19 +2,26 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/ConstraintLayoutStyle">
+    android:padding="@dimen/default_padding"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
-        style="@style/LinearLayoutStyle"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.4">
+        app:layout_constraintVertical_bias="0.4"
+        android:orientation="vertical"
+        android:padding="@dimen/default_padding">
 
         <EditText
             android:id="@+id/login"
             style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="@string/login"
             android:inputType="text"
             android:autofillHints="no"/>
@@ -22,12 +29,15 @@
         <EditText
             android:id="@+id/password"
             style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="@string/password"
             android:autofillHints="no"
             android:inputType="textPassword"/>
 
         <androidx.cardview.widget.CardView
-            style="@style/CardViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
@@ -36,10 +46,14 @@
             <Button
                 android:id="@+id/btnAuth"
                 style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@color/mainColor"
                 android:textColor="@color/white"
                 android:text="@string/click"/>
 
         </androidx.cardview.widget.CardView>
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

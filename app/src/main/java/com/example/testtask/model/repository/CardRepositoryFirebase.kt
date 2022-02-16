@@ -49,11 +49,14 @@ class CardRepositoryFirebase : DB, Source {
     }
 
     override fun uploadImage(data: Uri?, id: String) {
-        var mRef = storageRef.child("${System.currentTimeMillis()}_image")
-        mRef.putFile(data!!).addOnCompleteListener {
-            if (it.isSuccessful) {
-                mRef.downloadUrl.addOnCompleteListener {
-                    database.child(id).child("image").setValue(it.result.toString())
+        data?.let{ uri ->
+            val mRef = storageRef.child("${System.currentTimeMillis()}_image")
+
+            mRef.putFile(uri).addOnCompleteListener { request ->
+                if (request.isSuccessful) {
+                    mRef.downloadUrl.addOnCompleteListener { url ->
+                        database.child(id).child("image").setValue(url.result.toString())
+                    }
                 }
             }
         }

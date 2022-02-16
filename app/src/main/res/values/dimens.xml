@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <dimen name="indentTop">8dp</dimen>
+
+    //Value Text
+    <dimen name="default_text">16sp</dimen>
+    <dimen name="header_text">20sp</dimen>
+    <dimen name="card_price_text">32sp</dimen>
+
+    //Padding
+    <dimen name="default_padding">16dp</dimen>
+
+    //Label Padding
+    <dimen name="label_start_padding">32dp</dimen>
+    <dimen name="label_end_padding">16dp</dimen>
+    <dimen name="label_top_end_padding">4dp</dimen>
+    <dimen name="description_start_padding">4dp</dimen>
+
+    //Label Margin
+    <dimen name="label_top_margin">12dp</dimen>
+
+    //Top Bar
+    <dimen name="header_start_margin">16dp</dimen>
+
+    //Padding TextView
+    <dimen name="bottom_margin">16dp</dimen>
+
 </resources>

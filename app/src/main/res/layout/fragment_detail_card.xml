@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    style="@style/RootConstraintLayoutStyle"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <include
         android:id="@+id/topbar_list"
@@ -15,8 +17,10 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
-            style="@style/LinearLayoutStyle"
-            android:padding="0dp">
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:padding="0dp"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/image"
@@ -27,45 +31,64 @@
                 android:layout_marginTop="@dimen/indentTop"/>
 
             <LinearLayout
-                style="@style/LinearLayoutStyle"
-                android:layout_marginTop="16dp">
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:padding="@dimen/default_padding">
 
                 <TextView
                     android:id="@+id/price"
                     style="@style/TextViewStyle"
-                    android:text="Цена"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/price"
                     android:textSize="26sp" />
 
                 <TextView
                     android:id="@+id/place"
                     style="@style/TextViewStyle"
-                    android:hint="@string/place"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/place"
                     android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/area"
                     style="@style/TextViewStyle"
-                    android:hint="@string/area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/area"
                     android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/count"
                     style="@style/TextViewStyle"
-                    android:hint="Количество комнат"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/count_rooms"
                     android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/price2"
                     style="@style/TextViewStyle"
-                    android:hint="Цена за кв. м"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/price_m"
                     android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/floor"
                     style="@style/TextViewStyle"
-                    android:hint="Этаж"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/floor"
                     android:textSize="16sp"/>
+
             </LinearLayout>
+
         </LinearLayout>
+
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

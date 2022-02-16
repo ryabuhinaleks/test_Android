@@ -25,7 +25,9 @@ class MainActivity : AppCompatActivity(), HelperView {
 
         APP_ACTIVITY = this
 
-        binding = ActivityMainBinding.inflate(layoutInflater).also{ setContentView(it.root) }
+        binding = ActivityMainBinding.inflate(layoutInflater).also{ binding ->
+            setContentView(binding.root)
+        }
 
         val currentFragment = when(isAuthUser()) {
             true -> ListCardsFragment()
@@ -81,9 +83,9 @@ class MainActivity : AppCompatActivity(), HelperView {
 
     override fun showEmptyField(vararg field: EditText): Boolean {
         var result = true;
-        field.map {
-            if (it.text.toString().isEmpty()) {
-                it.error = APP_ACTIVITY.getString(R.string.emptyField)
+        field.map { field ->
+            if (field.text.toString().isEmpty()) {
+                field.error = APP_ACTIVITY.getString(R.string.empty_field)
                 result = false
             }
         }

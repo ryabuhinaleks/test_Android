@@ -35,16 +35,16 @@ class ListCardsFragment : MvpAppCompatFragment(), ListCardsView {
         binding.list.adapter = cardAdapter
 
         with(binding.topbarList) {
-            done.visibility = View.INVISIBLE
-            exit.visibility = View.VISIBLE
-            add.visibility = View.VISIBLE
-            title.text = getString(R.string.listCards)
 
-            exit.setOnClickListener {
+            title.text = getString(R.string.list_cards)
+
+            buttonStart.setImageResource(R.drawable.ic_exit)
+            buttonStart.setOnClickListener {
                 presenter.onExit()
             }
 
-            add.setOnClickListener {
+            buttonEnd.setImageResource(R.drawable.ic_add)
+            buttonEnd.setOnClickListener {
                 presenter.onAddCard()
             }
         }

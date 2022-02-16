@@ -18,7 +18,9 @@ class DetailCardPresenter : MvpPresenter<DetailCardView>() {
         dataBase.getInfoCardId(id).addValueEventListener(object : ValueEventListener {
 
             override fun onDataChange(snapshot: DataSnapshot) {
-                viewState.setCard(cardInfo = snapshot.getValue(Card::class.java)!!)
+                snapshot.getValue(Card::class.java)?.let {  card ->
+                    viewState.setCard(cardInfo = card)
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {

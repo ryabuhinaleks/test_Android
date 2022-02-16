@@ -21,7 +21,9 @@ class ListCardsPresenter : MvpPresenter<ListCardsView>() {
 
     fun createAdapter() = CardsAdapter(object : CardsListener {
         override fun cardDetail(card: Card) {
-            APP_ACTIVITY.launchFragment(DetailCardFragment.newInstance(card.id!!))
+            card.id?.let { id ->
+                APP_ACTIVITY.launchFragment(DetailCardFragment.newInstance(id))
+            }
         }
     })
 
@@ -33,13 +35,13 @@ class ListCardsPresenter : MvpPresenter<ListCardsView>() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val cardList: MutableList<Card> = mutableListOf()
 
-                snapshot.children.map {
-                    val card = it.getValue(Card::class.java)
-                    if (card != null) {
-                        card.id = it.key.toString()
+                snapshot.children.map { data ->
+                    data.getValue(Card::class.java)?.let { card ->
+                        card.id = data.key.toString()
                         cardList.add(card)
                     }
                 }
+
                 viewState.setListCard(cardList)
             }
 
