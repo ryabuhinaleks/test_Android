@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -15,6 +14,7 @@ import com.example.testtask.R
 import com.example.testtask.cards.addCard.AddCardPresenter
 import com.example.testtask.cards.addCard.AddCardView
 import com.example.testtask.databinding.FragmentUpdateCardBinding
+import com.example.testtask.model.Card
 
 class AddCardFragment : MvpAppCompatFragment(), AddCardView {
 
@@ -38,8 +38,23 @@ class AddCardFragment : MvpAppCompatFragment(), AddCardView {
             }
 
             buttonEnd.setOnClickListener {
-                if (presenter.createCard(binding)) {
-                    APP_ACTIVITY.back()
+                with(binding) {
+                    when (APP_ACTIVITY.showEmptyField(price, area, place)) {
+                        true -> {
+                            Card(
+                                price = price.text.toString().toLong(),
+                                area = area.text.toString().toInt(),
+                                place = place.text.toString(),
+
+                                count = count.text.toString().toIntOrNull(),
+                                price2 = price2.text.toString().toIntOrNull(),
+                                floor = floor.text.toString().toIntOrNull()
+                            ).also { card ->
+                                presenter.createCard(card = card)
+                                APP_ACTIVITY.back()
+                            }
+                        }
+                    }
                 }
             }
         }
