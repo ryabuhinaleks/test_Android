@@ -11,7 +11,7 @@
     <androidx.cardview.widget.CardView
         android:layout_height="200dp"
         android:layout_width="match_parent"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="@dimen/radius"
         app:cardUseCompatPadding="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +20,9 @@
 
             <ImageView
                 android:id="@+id/image"
-                style="@style/ImageStyle"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:scaleType="centerCrop"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:src="@drawable/test"/>
@@ -31,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 tools:text="1200000"
+                android:layout_marginTop="@dimen/label_top_margin"
                 app:layout_constraintTop_toTopOf="@id/image"
                 app:layout_constraintRight_toRightOf="@id/image"
                 android:drawableRight="@drawable/ic_money"/>
@@ -44,8 +47,7 @@
         style="@style/TextViewCardV2Style"
         tools:text="Тюмень,ул. Пожрных и спасателей, д 5"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textSize="16sp"/>
+        android:layout_width="match_parent"/>
 
     <TextView
         android:id="@+id/area"
@@ -53,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         tools:text="Описание ..."
-        android:textSize="12sp"
+        android:textSize="@dimen/small_text"
         android:paddingBottom="10dp"/>
 
 </LinearLayout>

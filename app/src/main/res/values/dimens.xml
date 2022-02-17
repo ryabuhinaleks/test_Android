@@ -7,23 +7,38 @@
     <dimen name="default_text">16sp</dimen>
     <dimen name="header_text">20sp</dimen>
     <dimen name="card_price_text">32sp</dimen>
+    <dimen name="detail_price_text">24sp</dimen>
 
     //Padding
     <dimen name="default_padding">16dp</dimen>
 
-    //Label Padding
+    //Card
+    <dimen name="radius">16dp</dimen>
+
+    //Card - Label Padding
     <dimen name="label_start_padding">32dp</dimen>
     <dimen name="label_end_padding">16dp</dimen>
     <dimen name="label_top_end_padding">4dp</dimen>
     <dimen name="description_start_padding">4dp</dimen>
 
-    //Label Margin
+    //Card - Label Margin
     <dimen name="label_top_margin">12dp</dimen>
+
+    //Card - Description
+    <dimen name="small_text">12sp</dimen>
 
     //Top Bar
     <dimen name="header_start_margin">16dp</dimen>
 
     //Padding TextView
     <dimen name="bottom_margin">16dp</dimen>
+    <dimen name="start_margin">16dp</dimen>
+
+    //Button Update Image
+    <dimen name="button_update_radius">8dp</dimen>
+    <dimen name="button_margin_top">16dp</dimen>
+
+    //Update Card - Margin
+    <dimen name="update_margin_top">16dp</dimen>
 
 </resources>

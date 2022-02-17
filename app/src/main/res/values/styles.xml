@@ -21,24 +21,15 @@
     <style name="HeaderTopBarStyle">
         <item name="android:textSize">@dimen/header_text</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:layout_marginStart">@dimen/header_start_margin</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="ImageStyle">
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:scaleType">centerCrop</item>
-    </style>
-
     <style name="TextViewStyle">
-        <item name="android:layout_marginBottom">@dimen/bottom_margin</item>
         <item name="android:textSize">@dimen/default_text</item>
     </style>
 
     <style name="TextViewCardStyle">
         <item name="android:textStyle">bold</item>
-        <item name="android:layout_marginTop">@dimen/label_top_margin</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:paddingStart">@dimen/label_start_padding</item>
         <item name="android:paddingEnd">@dimen/label_end_padding</item>
@@ -48,7 +39,7 @@
         <item name="android:textSize">@dimen/card_price_text</item>
     </style>
 
-    <style name="TextViewCardV2Style">
+    <style name="TextViewCardV2Style" parent="TextViewStyle">
         <item name="android:paddingStart">@dimen/description_start_padding</item>
     </style>
 

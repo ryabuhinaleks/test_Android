@@ -42,48 +42,49 @@
                     style="@style/TextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/bottom_margin"
                     tools:text="@string/price"
-                    android:textSize="26sp" />
+                    android:textSize="@dimen/detail_price_text" />
 
                 <TextView
                     android:id="@+id/place"
                     style="@style/TextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:text="@string/place"
-                    android:textSize="16sp"/>
+                    android:layout_marginBottom="@dimen/bottom_margin"
+                    tools:text="@string/place" />
 
                 <TextView
                     android:id="@+id/area"
                     style="@style/TextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:text="@string/area"
-                    android:textSize="16sp"/>
+                    android:layout_marginBottom="@dimen/bottom_margin"
+                    tools:text="@string/area" />
 
                 <TextView
                     android:id="@+id/count"
                     style="@style/TextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:text="@string/count_rooms"
-                    android:textSize="16sp"/>
+                    android:layout_marginBottom="@dimen/bottom_margin"
+                    tools:text="@string/count_rooms" />
 
                 <TextView
                     android:id="@+id/price2"
                     style="@style/TextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:text="@string/price_m"
-                    android:textSize="16sp"/>
+                    android:layout_marginBottom="@dimen/bottom_margin"
+                    tools:text="@string/price_m" />
 
                 <TextView
                     android:id="@+id/floor"
                     style="@style/TextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:text="@string/floor"
-                    android:textSize="16sp"/>
+                    android:layout_marginBottom="@dimen/bottom_margin"
+                    tools:text="@string/floor" />
 
             </LinearLayout>
 
