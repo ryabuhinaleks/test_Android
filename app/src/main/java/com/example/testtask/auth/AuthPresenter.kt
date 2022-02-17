@@ -12,8 +12,8 @@ class AuthPresenter : MvpPresenter<AuthView>() {
     private var auth: FirebaseAuth = Firebase.auth
 
     fun signIn(email: String, password: String){
-        auth.signInWithEmailAndPassword(email,password).addOnCompleteListener {
-            viewState.onSignIn(it.isSuccessful)
+        auth.signInWithEmailAndPassword(email,password).addOnCompleteListener { result ->
+            viewState.onSignIn(result.isSuccessful)
         }
     }
 }
