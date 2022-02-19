@@ -27,7 +27,9 @@ class DetailCardFragment : MvpAppCompatFragment(), DetailCardView {
         super.onCreate(savedInstanceState)
 
         arguments?.run {
-            idCard = getString(ARG_OPTIONS)!!
+            getString(ARG_OPTIONS)?.also {
+                id -> idCard = id
+            }
         }
     }
 

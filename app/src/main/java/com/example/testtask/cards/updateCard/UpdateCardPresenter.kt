@@ -20,7 +20,6 @@ class UpdateCardPresenter : MvpPresenter<UpdateCardView>() {
                 dataBase.uploadImage(uri, id)
             }
         }
-
     }
 
     fun updateImage() = imageURI.toString()

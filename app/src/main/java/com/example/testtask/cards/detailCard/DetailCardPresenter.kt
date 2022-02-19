@@ -1,32 +1,33 @@
 package com.example.testtask.cards.detailCard
 
+import android.annotation.SuppressLint
 import android.util.Log
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.example.testtask.model.Card
 import com.example.testtask.model.repository.CardRepositoryFirebase
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
+import durdinapps.rxfirebase2.RxFirebaseDatabase
 
 @InjectViewState
 class DetailCardPresenter : MvpPresenter<DetailCardView>() {
 
     private var dataBase: CardRepositoryFirebase = CardRepositoryFirebase()
 
+    @SuppressLint("CheckResult")
     fun getPropertyCard(id: String) {
-        dataBase.getInfoCardId(id).addValueEventListener(object : ValueEventListener {
 
-            override fun onDataChange(snapshot: DataSnapshot) {
-                snapshot.getValue(Card::class.java)?.let {  card ->
-                    viewState.setCard(cardInfo = card)
+        RxFirebaseDatabase.observeSingleValueEvent(dataBase.getInfoCardId(id), Card::class.java)
+            .filter {
+                    card -> card != null
+            }
+            .subscribe(
+                {
+                    response -> viewState.setCard(cardInfo = response)
+                },
+                {
+                    error -> Log.e("ErrorListCards", error.message.toString())
                 }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Log.e("ErrorDetailCard", error.message)
-            }
-        })
+            )
     }
 }
 

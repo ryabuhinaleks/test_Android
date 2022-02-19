@@ -51,8 +51,8 @@ class ListCardsFragment : MvpAppCompatFragment(), ListCardsView {
         return binding.root
     }
 
-    override fun setListCard(cards: MutableList<Card>) {
-        cardAdapter.cards = cards
+    override fun setListCard(card: Card) {
+        cardAdapter.addCard(card)
     }
 
 }
