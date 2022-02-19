@@ -17,11 +17,10 @@ interface CardsListener {
 class CardsAdapter( private val cardsListener: CardsListener) : RecyclerView.Adapter<CardsAdapter.CardsViewHolder>(), View.OnClickListener {
 
     var cards: MutableList<Card> = mutableListOf()
-
-    fun addCard(card: Card) {
-        cards.add(card)
-        notifyDataSetChanged()
-    }
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
     class CardsViewHolder(
         val binding: CardBinding

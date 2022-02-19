@@ -16,7 +16,7 @@ class DetailCardPresenter : MvpPresenter<DetailCardView>() {
     @SuppressLint("CheckResult")
     fun getPropertyCard(id: String) {
 
-        RxFirebaseDatabase.observeSingleValueEvent(dataBase.getInfoCardId(id), Card::class.java)
+        RxFirebaseDatabase.observeValueEvent(dataBase.getInfoCardId(id), Card::class.java)
             .filter {
                     card -> card != null
             }

@@ -11,6 +11,7 @@ import com.example.testtask.cards.updateCard.AddCardFragment
 import com.example.testtask.model.Card
 import com.example.testtask.model.repository.CardRepositoryFirebase
 import com.google.firebase.database.ValueEventListener
+import durdinapps.rxfirebase2.DataSnapshotMapper
 import durdinapps.rxfirebase2.RxFirebaseDatabase
 
 @InjectViewState
@@ -32,13 +33,7 @@ class ListCardsPresenter : MvpPresenter<ListCardsView>() {
     @SuppressLint("CheckResult")
     fun getCards() {
 
-        RxFirebaseDatabase.observeChildEvent(dataBase.getData(), Card::class.java)
-            .map {
-                result -> result.value
-            }
-            .filter {
-                card -> card != null
-            }
+        RxFirebaseDatabase.observeValueEvent(dataBase.getData(), DataSnapshotMapper.listOf(Card::class.java))
             .subscribe(
                 {
                     response -> viewState.setListCard(response)

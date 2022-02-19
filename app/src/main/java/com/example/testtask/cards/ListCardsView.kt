@@ -8,5 +8,5 @@ import com.example.testtask.model.Card
 @StateStrategyType(value = OneExecutionStateStrategy::class)
 interface ListCardsView : MvpView {
 
-    fun setListCard(card: Card)
+    fun setListCard(cards: MutableList<Card>)
 }
