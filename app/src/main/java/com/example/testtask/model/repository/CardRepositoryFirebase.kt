@@ -19,7 +19,6 @@ interface Source {
 
     fun connect (tableName: String) :DatabaseReference
 
-    fun disconnect (eventListener: ValueEventListener)
 }
 
 interface DB {
@@ -125,7 +124,5 @@ class CardRepositoryFirebase : DB, Source {
     }
 
     override fun connect(tableName: String) = Firebase.database.reference.child(tableName)
-
-    override fun disconnect(eventListener: ValueEventListener) = database.removeEventListener(eventListener)
 
 }

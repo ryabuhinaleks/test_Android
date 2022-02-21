@@ -45,7 +45,6 @@ class ListCardsPresenter : MvpPresenter<ListCardsView>() {
     }
 
     fun onExit() {
-        dataBase.disconnect(eventListener)
         APP_ACTIVITY.signOut()
         APP_ACTIVITY.launchFragment(AuthFragment())
     }
